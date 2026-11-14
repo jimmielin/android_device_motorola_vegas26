@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Status bar height. In portrait the framework uses the larger of this
+         and the camera cutout height (112 px), so the bar always clears the
+         punch hole. -->
+    <dimen name="status_bar_height">35dp</dimen>
+    <dimen name="status_bar_height_portrait">35dp</dimen>
+    <dimen name="status_bar_height_landscape">28dp</dimen>
+
+    <!-- Radius of the rounded display corners. Stock sets this only in its
+         SystemUI overlay, as the Motorola-specific real_rounded_corner_radius. -->
+    <dimen name="rounded_corner_radius">95px</dimen>
+    <dimen name="rounded_corner_radius_top">95px</dimen>
+    <dimen name="rounded_corner_radius_bottom">95px</dimen>
+</resources>

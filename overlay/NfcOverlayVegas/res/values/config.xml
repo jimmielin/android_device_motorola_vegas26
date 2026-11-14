@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Tell the user when a tag was read but no app could handle it, as the
+         stock NfcOverlay does for the NXP SN220 controller. -->
+    <bool name="enable_notify_dispatch_failed">true</bool>
+</resources>

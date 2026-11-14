@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- The Goodix sensor in the power key, exposed by the HIDL fingerprint HAL
+         as sensor 0 (id:modality:strength = 0:fingerprint:strong). -->
+    <string-array name="config_biometric_sensors" translatable="false">
+        <item>0:2:15</item>
+    </string-array>
+
+    <!-- The fingerprint sensor is built into the power button. -->
+    <bool name="config_is_powerbutton_fps">true</bool>
+
+    <!-- Side fingerprint sensor location: display, x, y, radius. The power key
+         sits on the right edge, 1040 px from the top of the panel. -->
+    <array name="config_sfps_sensor_props" translatable="false">
+        <item>@array/config_sfps_sensor_props_0</item>
+    </array>
+    <array name="config_sfps_sensor_props_0" translatable="false">
+        <item></item>
+        <item>0</item>
+        <item>1040</item>
+        <item>0</item>
+    </array>
+
+    <!-- Brightness: the panel reaches about 500 nits at backlight level 241 and
+         up to 1000 nits at full backlight. config_screenBrightnessBacklight
+         (framework 0-255 scale) and config_screenBrightnessNits describe the
+         panel response; the float values below are fractions of the full
+         backlight range. -->
+
+    <!-- Lowest brightness the user can select: the lowest non-zero entry of
+         config_screenBrightnessBacklight (7), i.e. (7 - 1) / 254. -->
+    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.0236221</item>
+
+    <!-- Brightness used on first boot: backlight level 111 of 255. -->
+    <item name="config_screenBrightnessSettingDefaultFloat" format="float" type="dimen">0.435294</item>
+
+    <!-- Brightness used to dim the screen before the user activity timeout expires. -->
+    <item name="config_screenBrightnessDimFloat" format="float" type="dimen">0.0236221</item>
+
+    <!-- Brightness used while dozing: backlight level 17 on the 0-255 scale,
+         i.e. (17 - 1) / 254. Stock sets this only as the integer
+         config_screenBrightnessDoze in its framework-res product overlay. -->
+    <item name="config_screenBrightnessDozeFloat" format="float" type="dimen">0.06299213</item>
+
+    <!-- Ambient light (lux) thresholds for the auto-brightness curve. Each entry
+         starts a new control point in config_autoBrightnessDisplayValuesNits. -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>29</item>
+        <item>50</item>
+        <item>90</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>800</item>
+        <item>1000</item>
+        <item>1300</item>
+        <item>1500</item>
+        <item>1600</item>
+        <item>1800</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+    </integer-array>
+
+    <!-- Target screen brightness in nits for each auto-brightness control point;
+         one entry longer than config_autoBrightnessLevels. -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>3</item>
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+        <item>70</item>
+        <item>85</item>
+        <item>110</item>
+        <item>130</item>
+        <item>150</item>
+        <item>180</item>
+        <item>180</item>
+        <item>180</item>
+        <item>180</item>
+        <item>225</item>
+        <item>270</item>
+        <item>300</item>
+        <item>315</item>
+        <item>330</item>
+        <item>350</item>
+        <item>380</item>
+        <item>420</item>
+        <item>450</item>
+        <item>500</item>
+        <item>700</item>
+        <item>800</item>
+        <item>1000</item>
+    </array>
+
+    <!-- Backlight levels (0-255) matching each entry of config_screenBrightnessNits. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>0</item>
+        <item>7</item>
+        <item>16</item>
+        <item>25</item>
+        <item>47</item>
+        <item>59</item>
+        <item>67</item>
+        <item>80</item>
+        <item>89</item>
+        <item>98</item>
+        <item>111</item>
+        <item>128</item>
+        <item>145</item>
+        <item>156</item>
+        <item>161</item>
+        <item>166</item>
+        <item>173</item>
+        <item>182</item>
+        <item>195</item>
+        <item>204</item>
+        <item>219</item>
+        <item>234</item>
+        <item>241</item>
+        <item>255</item>
+    </integer-array>
+
+    <!-- Measured panel brightness in nits at each config_screenBrightnessBacklight level. -->
+    <array name="config_screenBrightnessNits">
+        <item>0</item>
+        <item>3</item>
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+        <item>70</item>
+        <item>85</item>
+        <item>110</item>
+        <item>130</item>
+        <item>150</item>
+        <item>180</item>
+        <item>225</item>
+        <item>270</item>
+        <item>300</item>
+        <item>315</item>
+        <item>330</item>
+        <item>350</item>
+        <item>380</item>
+        <item>420</item>
+        <item>450</item>
+        <item>500</item>
+        <item>700</item>
+        <item>800</item>
+        <item>1000</item>
+    </array>
+
+    <!-- The 1080 x 2388 panel offers 60, 90 and 120 Hz modes. A default refresh
+         rate of 0 lets the peak refresh rate act as the default. -->
+    <integer name="config_defaultRefreshRate">0</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
+
+    <!-- Color modes offered in Settings: natural (0) and saturated (2). -->
+    <integer-array name="config_availableColorModes">
+        <item>0</item>
+        <item>2</item>
+    </integer-array>
+
+    <!-- Punch-hole front camera at the top center of the panel, described as a
+         90 x 112 px box in native (1080 x 2388) pixels. Its height also sets the
+         minimum status bar height. -->
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">M -45,0 L 45,0 L 45,112 L -45,112 Z</string>
+
+    <!-- Vibration patterns used when the vibrator HAL does not implement the
+         matching predefined effect: heavy click, click and tick. -->
+    <integer-array name="config_longPressVibePattern">
+        <item>0</item>
+        <item>75</item>
+    </integer-array>
+    <integer-array name="config_virtualKeyVibePattern">
+        <item>0</item>
+        <item>45</item>
+    </integer-array>
+    <integer-array name="config_clockTickVibePattern">
+        <item>0</item>
+        <item>15</item>
+    </integer-array>
+
+    <!-- The 3.5 mm headset jack reports plug events through the input
+         subsystem (switch events) rather than through uevents. -->
+    <bool name="config_useDevInputEventForAudioJack">true</bool>
+
+    <!-- SIM slot 1 is the embedded eSIM; slot 0 is the removable nano-SIM tray. -->
+    <integer-array name="non_removable_euicc_slots">
+        <item>1</item>
+    </integer-array>
+
+    <!-- MMS user agent and UAProf URL sent to carrier MMSCs. -->
+    <string name="config_mms_user_agent" translatable="false">motogpower2025</string>
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.motorola.com/phoneconfig/motov1/Profile/motov1.rdf</string>
+</resources>
