@@ -1,0 +1,5 @@
+# Fingerprint sensor controls (fpc_spi: irq, clk_enable, wakeup_enable)
+type vendor_sysfs_fingerprint, sysfs_type, fs_type;
+
+# Awinic AW883xx speaker amplifier attributes (calibration)
+type vendor_sysfs_speaker_amp, sysfs_type, fs_type;

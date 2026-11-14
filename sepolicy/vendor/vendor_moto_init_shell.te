@@ -1,0 +1,2 @@
+# hardware_revisions.sh walks the I2C devices, including the speaker amplifiers
+r_dir_file(vendor_moto_init_shell, vendor_sysfs_speaker_amp)

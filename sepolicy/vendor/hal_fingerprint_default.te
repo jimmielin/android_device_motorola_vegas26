@@ -1,0 +1,17 @@
+# Trusted application session with the fingerprint TA
+allow hal_fingerprint_default mobicore_user_device:chr_file rw_file_perms;
+allow hal_fingerprint_default mobicore:unix_stream_socket connectto;
+
+# Sensor power, clock and interrupt controls
+allow hal_fingerprint_default vendor_sysfs_fingerprint:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:file rw_file_perms;
+
+# Navigation gestures are injected through uinput
+allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
+
+# Enrollment and usage statistics under /data/vendor/.fps
+allow hal_fingerprint_default fingerprint_vendor_data_file:dir create_dir_perms;
+allow hal_fingerprint_default fingerprint_vendor_data_file:file create_file_perms;
+
+# The FPC HAL logs the boot image build properties
+get_prop(hal_fingerprint_default, build_bootimage_prop)

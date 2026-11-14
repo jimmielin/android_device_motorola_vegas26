@@ -1,0 +1,13 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+    imports: [
+        "device/motorola/mt6835-common",
+        "hardware/motorola",
+        "hardware/google/interfaces",
+        "hardware/google/pixel",
+    ],
+}

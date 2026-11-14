@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "android_device_motorola_mt6835-common",
+    "target_path": "device/motorola/mt6835-common"
+  },
+  {
+    "repository": "android_device_motorola_vegas-kernels",
+    "target_path": "device/motorola/vegas-kernels"
+  }
+]
