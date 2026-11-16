@@ -5,9 +5,10 @@
 #
 # Start the fingerprint HAL for whichever sensor this unit has fitted.
 #
-# vegas ships with either an FPC or a Goodix sensor. Each one needs its TEE
-# driver module loaded before its HAL service starts, and the HAL reports a
-# working sensor by setting vendor.hw.fingerprint.status=ok. The detected
+# vegas26 has an FPC sensor, but the stock vendor also supports Goodix. Each
+# sensor needs its TEE driver module loaded before its HAL service starts,
+# and the HAL reports a working sensor by setting
+# vendor.hw.fingerprint.status=ok. The detected
 # vendor is cached in /mnt/vendor/persist/fps/vendor_id (the same file stock
 # firmware uses) so later boots try it first.
 

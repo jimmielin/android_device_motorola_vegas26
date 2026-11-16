@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "NfcOverlayVegas",
-    product_specific: true,
+    name: "SystemUIOverlayVegas26",
+    vendor: true,
 }

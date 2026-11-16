@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/vegas
+DEVICE_PATH := device/motorola/vegas26
 KERNEL_PATH := $(DEVICE_PATH)-kernels
 
 # Bootloader
@@ -39,6 +39,7 @@ BOARD_VENDOR_KERNEL_MODULES += \
         bt_drv_connac1x.ko \
         connfem.ko \
         fmradio_drv_mt6631_6635.ko \
+        focaltech_0flash_mmi_v3.ko \
         fpc_mtk_tee.ko \
         goodix_fps_tee.ko \
         gps_drv_stp.ko \
@@ -62,8 +63,8 @@ BOARD_VENDOR_KERNEL_MODULES += \
         wmt_drv.ko)
 
 # Partitions
-BOARD_SUPER_PARTITION_SIZE := 10166992896
-BOARD_MOTOROLA_DYNAMIC_PARTITIONS_SIZE := 10162798592 # (BOARD_SUPER_PARTITION_SIZE - 4MiB)
+BOARD_SUPER_PARTITION_SIZE := 11475615744
+BOARD_MOTOROLA_DYNAMIC_PARTITIONS_SIZE := 11471421440 # (BOARD_SUPER_PARTITION_SIZE - 4MiB)
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
@@ -72,19 +73,20 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Security patch level
-# Never below stock (W1VES36H.10-12-9-8-4): KeyMint treats a lower boot or
+# Never below stock (W1WEOS36.48-22-3-3-4-3): KeyMint treats a lower boot or
 # vendor patch level as a rollback.
-BOOT_SECURITY_PATCH := 2026-08-01
-VENDOR_SECURITY_PATCH := 2026-08-01
+BOOT_SECURITY_PATCH := 2026-06-01
+VENDOR_SECURITY_PATCH := 2026-06-01
 
 # Verified Boot
-# The bootloader keeps stock's rollback index 21 for vbmeta (location 0) and
+# The bootloader keeps stock's rollback index 7 for vbmeta (location 0) and
 # vbmeta_system (location 2); images must not go below it.
-BOARD_AVB_ROLLBACK_INDEX := 21
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 21
+BOARD_AVB_ROLLBACK_INDEX := 7
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 7
 
-# Inherit from mt6835-common
+# Inherit from mt6835-common, with the common blobs extracted from vegas26 stock
+MT6835_COMMON_VENDOR_PATH := vendor/motorola/mt6835-common-vegas26
 include device/motorola/mt6835-common/BoardConfigCommon.mk
 
 # Inherit the proprietary files
-include vendor/motorola/vegas/BoardConfigVendor.mk
+include vendor/motorola/vegas26/BoardConfigVendor.mk

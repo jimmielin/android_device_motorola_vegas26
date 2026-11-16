@@ -7,6 +7,9 @@ on property:ro.vendor.hw.dualsim=true
 on property:ro.vendor.hw.dualsim=false
    setprop persist.vendor.radio.multisim.config ""
 
+on property:ro.boot.radio=NA2
+   setprop persist.vendor.nfc.orlando 1
+
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules moto_sched moto_binder
     exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules cps4038_mmi qpnp_adaptive_charge sensors_class sx937x_sar leds-gpio moto_mmap_fault
@@ -69,6 +72,9 @@ on init
     #insmod /vendor/lib/modules/aw86927.ko
     #insmod /vendor/lib/modules/st54lnfc.ko
     #insmod /vendor/lib/modules/st54lspi.ko
+
+on init && property:ro.boot.cid=0x0
+    insmod /vendor/lib/modules/sys_monitor.ko
 
 service vendor.modem-rfs-sh /vendor/bin/init.mmi.modem-rfs.sh loop 600
     class late_start
@@ -226,6 +232,11 @@ on boot
     chmod 0660 /dev/aw_smartpa
     chown system shell /dev/aw_smartpa
 
+    # sys monitor
+    mkdir /data/vendor/sys_monitor_temp 0770 system log
+    mkdir /data/vendor/sys_monitor_daily 0770 system log
+    chown system system /sys/kernel/sys_monitor/cpufreq_count
+
 on boot && property:ro.bootmode=mot-factory
     # Change ownership and permission for charge pump factory testing
     chown vendor_tcmd system /sys/class/power_supply/cp-standalone/voltage_now
@@ -239,13 +250,16 @@ on boot && property:ro.bootmode=mot-factory
     chown vendor_tcmd system /sys/class/power_supply/charger/constant_charge_current
 
 on fs
-    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules nova_0flash_mmi_v3 ilitek_v3_mmi mmi_stow
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules nova_0flash_mmi_v3 ilitek_v3_mmi mmi_stow focaltech_0flash_mmi_v3
 
 # camera eeprom calibration
 on property:sys.boot_completed=1
     chmod 0644 /data/vendor/camera_dump/mot_gt24p128f_ov50d_eeprom.bin
     chmod 0644 /data/vendor/camera_dump/mot_gt24p128g_s5k3p9_eeprom.bin
     chmod 0644 /data/vendor/camera_dump/mot_gt24p64g_ov08d_eeprom.bin
+    chmod 0644 /data/vendor/camera_dump/mot_ov50d_eeprom.bin
+    chmod 0644 /data/vendor/camera_dump/mot_s5kkds_eeprom.bin
+    chmod 0644 /data/vendor/camera_dump/mot_ov08d_eeprom.bin
 
 # Batt_health init
 on post-fs-data
@@ -355,3 +369,13 @@ on late-init && property:ro.boot.logw2uart=*
 on late-init && property:ro.boot.logi2uart=*
     setprop persist.vendor.uartconsole.enable 1
     start logi2uart
+
+on property:sys.boot_completed=1 && property:ro.boot.cid=0x0
+    start vendor.sys_monitor
+
+service vendor.sys_monitor /vendor/bin/sys_monitor
+    class late_start
+    user system
+    group system log diag
+    oneshot
+    disabled

@@ -1,0 +1,84 @@
+From 0fd78bc8f7cdb5229918f8f54f17708e9dc9a7bf Mon Sep 17 00:00:00 2001
+From: Mashopy <eliasgheeraert@gmail.com>
+Date: Mon, 15 Dec 2025 22:51:41 +0100
+Subject: [PATCH 7/8] ImsService: Remove references to TelephonyMetrics
+
+Google deprecated TelephonyMetrics class in Android 16 QPR2 as it was considered legacy code [1].
+
+[1] https://android.googlesource.com/platform/frameworks/opt/telephony/+/a1e87f8d20c88efa8887091059d6abb5b5b2f0d0
+
+Rebased onto the MT6835 (moto g power 2025) ImsService: drop only the
+metrics calls; the argument setup left in front of them is dead code.
+
+Signed-off-by: Cyber Knight <cyberknight755@gmail.com>
+---
+ smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali | 1 -
+ smali/com/mediatek/ims/ril/ImsRILAdapter.smali            | 3 ---
+ smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali        | 1 -
+ smali/com/mediatek/wfo/ril/MwiRIL.smali                   | 1 -
+ 4 files changed, 6 deletions(-)
+
+diff --git a/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali b/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali
+index e943954..bf7264f 100644
+--- a/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali
++++ b/smali/com/mediatek/ims/ril/ImsRILAdapter$RilHandler.smali
+@@ -1110,7 +1110,6 @@
+ 
+     iget v6, v1, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
+ 
+-    invoke-virtual {v3, v4, v5, v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
+ 
+     .line 705
+     .end local v2    # "timeoutResponse":Ljava/lang/Object;
+diff --git a/smali/com/mediatek/ims/ril/ImsRILAdapter.smali b/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
+index b638c8f..b99e2d9 100644
+--- a/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
++++ b/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
+@@ -5535,7 +5535,6 @@
+     .end local p4    # "ret":Ljava/lang/Object;
+     .local v4, "rilError":I
+     .local v6, "ret":Ljava/lang/Object;
+-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
+ 
+     .line 4393
+     iget p2, p1, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
+@@ -8580,7 +8579,6 @@
+ 
+     iget v4, v1, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
+ 
+-    invoke-virtual {v2, v3, v4}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeRilAnswer(II)V
+     :try_end_0
+     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+@@ -17893,7 +17891,6 @@
+ 
+     const-wide/16 v18, 0x0
+ 
+-    invoke-virtual/range {v13 .. v19}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeRilSendSms(IIIIJ)V
+ 
+     .line 4534
+     goto :goto_2
+diff --git a/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali b/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali
+index d918894..6f21619 100644
+--- a/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali
++++ b/smali/com/mediatek/wfo/ril/MwiRIL$RilHandler.smali
+@@ -212,7 +212,6 @@
+ 
+     iget v6, v2, Lcom/mediatek/wfo/ril/RILRequest;->mRequest:I
+ 
+-    invoke-virtual {v1, v4, v5, v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
+ 
+     .line 409
+     .end local v3    # "timeoutResponse":Ljava/lang/Object;
+diff --git a/smali/com/mediatek/wfo/ril/MwiRIL.smali b/smali/com/mediatek/wfo/ril/MwiRIL.smali
+index 308ecd7..a214cb5 100644
+--- a/smali/com/mediatek/wfo/ril/MwiRIL.smali
++++ b/smali/com/mediatek/wfo/ril/MwiRIL.smali
+@@ -3482,7 +3482,6 @@
+ 
+     .end local p3    # "ret":Ljava/lang/Object;
+     .local v6, "ret":Ljava/lang/Object;
+-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
+ 
+     .line 1150
+     if-eqz p1, :cond_2

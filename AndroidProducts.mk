@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_vegas.mk
+    $(LOCAL_DIR)/lineage_vegas26.mk

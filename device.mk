@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/vegas
+DEVICE_PATH := device/motorola/vegas26
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
@@ -31,16 +31,17 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworkOverlayVegas \
-    NfcOverlayVegas \
-    SystemUIOverlayVegas
+    FrameworkOverlayVegas26 \
+    NfcOverlayVegas26 \
+    SystemUIOverlayVegas26
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
 
-# Inherit from mt6835-common
+# Inherit from mt6835-common, with the common blobs extracted from vegas26 stock
+MT6835_COMMON_VENDOR_PATH := vendor/motorola/mt6835-common-vegas26
 $(call inherit-product, device/motorola/mt6835-common/mt6835.mk)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/motorola/vegas/vegas-vendor.mk)
+$(call inherit-product, vendor/motorola/vegas26/vegas26-vendor.mk)

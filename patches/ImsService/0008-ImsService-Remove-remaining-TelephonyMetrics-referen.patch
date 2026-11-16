@@ -1,0 +1,47 @@
+From acda9eed0ed8f42e9480d87221ba4b10c2ad507c Mon Sep 17 00:00:00 2001
+From: Cyber Knight <cyberknight755@gmail.com>
+Date: Tue, 16 Dec 2025 19:53:37 +0800
+Subject: [PATCH 8/8] ImsService: Remove remaining TelephonyMetrics references
+
+- Following the previous commit, drop all references to it.
+
+Rebased onto the MT6835 (moto g power 2025) ImsService: the metrics
+fields stay declared but are initialized to null instead of through
+TelephonyMetrics.getInstance().
+
+Signed-off-by: Cyber Knight <cyberknight755@gmail.com>
+---
+ smali/com/mediatek/ims/ril/ImsRILAdapter.smali | 4 +---
+ smali/com/mediatek/wfo/ril/MwiRIL.smali        | 4 +---
+ 2 files changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/smali/com/mediatek/ims/ril/ImsRILAdapter.smali b/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
+index b99e2d9..6ba4b01 100644
+--- a/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
++++ b/smali/com/mediatek/ims/ril/ImsRILAdapter.smali
+@@ -723,9 +723,7 @@
+     iput-object v0, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMtkRadioVersion:Ljava/util/Map;
+ 
+     .line 441
+-    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v0
++    const/4 v0, 0x0
+ 
+     iput-object v0, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+ 
+diff --git a/smali/com/mediatek/wfo/ril/MwiRIL.smali b/smali/com/mediatek/wfo/ril/MwiRIL.smali
+index a214cb5..7ef487c 100644
+--- a/smali/com/mediatek/wfo/ril/MwiRIL.smali
++++ b/smali/com/mediatek/wfo/ril/MwiRIL.smali
+@@ -268,9 +268,7 @@
+     iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mTestingEmergencyCall:Ljava/util/concurrent/atomic/AtomicBoolean;
+ 
+     .line 293
+-    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+-
+-    move-result-object v1
++    const/4 v1, 0x0
+ 
+     iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
+ 

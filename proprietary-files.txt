@@ -1,6 +1,6 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from moto g power - 2025 (vegas_g_sys-user 16 W1VES36H.10-12-9-8-4 366285-16991f).
-## variant: XT2515V (tracfone)
+## are from moto g power - 2026 (vegas_og_sys-user 16 W1WEOS36.48-22-3-3-4-3 7806ed-c4dcce).
+## variant: XT2617V (tracfone)
 
 # Audio (AWINIC aw883xx amplifier)
 vendor/etc/AW_DSP.bin
@@ -11,6 +11,9 @@ vendor/firmware/aw883xx_acf.bin
 vendor/lib64/libawinic_mtk_aurisys.so
 
 # Camera
+vendor/etc/arcsoft_calibration_u_dc.bin
+vendor/etc/bst_3ddns_orlando.cfg
+vendor/etc/orlando_hdrcfg.cfg
 vendor/bin/hw/mt6835/camerahalserver;SYMLINK=vendor/bin/hw/camerahalserver
 vendor/etc/camera/vidhance.lic
 vendor/etc/camera/vidhance_calibration
@@ -174,6 +177,106 @@ vendor/lib64/libCamera_motvegass5k3p9mipiraw_Pro_Face_Capture.so
 vendor/lib64/libCamera_motvegass5k3p9mipiraw_Raw_NV_Capture.so
 vendor/lib64/libCamera_motvegass5k3p9mipiraw_Scene_Capture.so
 vendor/lib64/libCamera_motvegass5k3p9mipiraw_Video_FHD.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_AutoNV_FaceCapture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_AutoNV_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Face_Capture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Face_HDR_EV0_Capture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Flash_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_P1_YUV.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Pro_FaceCapture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Pro_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Pro_SceneCapture_Zoom.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_RawNV_FaceCapture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_RawNV_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Scene_Capture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Scene_Capture_Zoom.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Scene_HDR_EV0_Capture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Scene_HDR_HighEV_Capture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Scene_HDR_LowEV_Capture.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Scene_Preview.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Scene_Preview_Zoom.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Slow_Motion.so
+vendor/lib64/libCamera_motorlandoov08dmipiraw_Video_FHD.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Face_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Face_Capture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Face_Capture_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Face_Capture_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Face_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Face_Capture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Face_Capture_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Face_Capture_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Scene_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Scene_Capture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Scene_Capture_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_HDR_Scene_Capture_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Preview.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Preview_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Preview_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Preview_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Scene_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Scene_Capture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Scene_Capture_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_Scene_Capture_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_3rd_VideoCall.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_AutoNV_FaceCapture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_AutoNV_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_EIS_Video_60FHD_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_EIS_Video_60FHD_6X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Face_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Face_HDR_EV0_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Flash_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_P1_YUV.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Panorama.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_FaceCapture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_FaceCapture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_FaceCapture_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_FaceCapture_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_SceneCapture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_SceneCapture_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Pro_SceneCapture_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_RawNV_FaceCapture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_RawNV_SceneCapture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Scene_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Scene_HDR_EV0_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Scene_HDR_HighEV_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Scene_HDR_LowEV_Capture.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Scene_Preview.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Slow_Motion.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Slow_Motion_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Video_60FHD.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Video_60FHD_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Video_60FHD_6X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Video_FHD.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Video_FHD_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Video_FHD_6X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_FaceCapture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_FacePreview_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_SceneCapture_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_SceneCapture_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_SceneCapture_8X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_ScenePreview_2X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_ScenePreview_4X.so
+vendor/lib64/libCamera_motorlandoov50dmipiraw_Zoom_ScenePreview_8X.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_3rd_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_3rd_HDR_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_3rd_Preview_0.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_3rd_Preview_1.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_3rd_Preview_2.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_3rd_Preview_3.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_AutoNV_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Face_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Face_HDR_EV0_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Face_HDR_HighEV_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Face_HDR_LowEV_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Face_Preview.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_ITS_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_P1_YUV.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Pro_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Pro_Face_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Raw_NV_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Scene_Capture.so
+vendor/lib64/libCamera_motorlandos5kkdsmipiraw_Video_FHD.so
 vendor/lib64/libcam.seninfn3d.so
 vendor/lib64/libcamalgo.3dnr.so
 vendor/lib64/libcamalgo.dngop.so
@@ -382,6 +485,8 @@ vendor/lib64/mt6835/libmtkcam_sysutils.so;SYMLINK=vendor/lib64/libmtkcam_sysutil
 vendor/lib64/mt6835/libmtkcam_tuning_utils.so;SYMLINK=vendor/lib64/libmtkcam_tuning_utils.so
 vendor/lib64/mt6835/libmtkcam_ulog.so;SYMLINK=vendor/lib64/libmtkcam_ulog.so
 vendor/lib64/mt6835/libvainr_model.so;SYMLINK=vendor/lib64/libvainr_model.so
+# libcameracustom links the vegas sensor libraries too (shared vendor image),
+# and those link their own scenario tuning libraries
 vendor/lib64/mt6835/mot_vegas_ov08d_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mot_vegas_ov08d_mipi_raw_IdxMgr.so
 vendor/lib64/mt6835/mot_vegas_ov08d_mipi_raw_tuning.so;SYMLINK=vendor/lib64/mot_vegas_ov08d_mipi_raw_tuning.so
 vendor/lib64/mt6835/mot_vegas_ov50d_2nd_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mot_vegas_ov50d_2nd_mipi_raw_IdxMgr.so
@@ -390,6 +495,12 @@ vendor/lib64/mt6835/mot_vegas_ov50d_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mot_
 vendor/lib64/mt6835/mot_vegas_ov50d_mipi_raw_tuning.so;SYMLINK=vendor/lib64/mot_vegas_ov50d_mipi_raw_tuning.so
 vendor/lib64/mt6835/mot_vegas_s5k3p9_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mot_vegas_s5k3p9_mipi_raw_IdxMgr.so
 vendor/lib64/mt6835/mot_vegas_s5k3p9_mipi_raw_tuning.so;SYMLINK=vendor/lib64/mot_vegas_s5k3p9_mipi_raw_tuning.so
+vendor/lib64/mt6835/mot_orlando_ov08d_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mot_orlando_ov08d_mipi_raw_IdxMgr.so
+vendor/lib64/mt6835/mot_orlando_ov08d_mipi_raw_tuning.so;SYMLINK=vendor/lib64/mot_orlando_ov08d_mipi_raw_tuning.so
+vendor/lib64/mt6835/mot_orlando_ov50d_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mot_orlando_ov50d_mipi_raw_IdxMgr.so
+vendor/lib64/mt6835/mot_orlando_ov50d_mipi_raw_tuning.so;SYMLINK=vendor/lib64/mot_orlando_ov50d_mipi_raw_tuning.so
+vendor/lib64/mt6835/mot_orlando_s5kkds_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mot_orlando_s5kkds_mipi_raw_IdxMgr.so
+vendor/lib64/mt6835/mot_orlando_s5kkds_mipi_raw_tuning.so;SYMLINK=vendor/lib64/mot_orlando_s5kkds_mipi_raw_tuning.so
 vendor/lib64/mt6835/mtk000_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/mtk000_mipi_raw_IdxMgr.so
 vendor/lib64/mt6835/mtk000_mipi_raw_tuning.so;SYMLINK=vendor/lib64/mtk000_mipi_raw_tuning.so
 vendor/lib64/mtkcam/mt6835/libmtkcam_streaminfo_plugin-p1stt.so;SYMLINK=vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
@@ -403,22 +514,30 @@ vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so
 vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
-vendor/lib64/libBST3DDNS.so
 vendor/lib64/libBSTHDRDETECT.so
 vendor/lib64/libBSTMultiExpoGainHDR.so
-vendor/lib64/libBSTSWAD.so;DISABLE_CHECKELF
-vendor/lib64/libBSTbase_share.so
+# Stock builds of the orlando BST libraries keep the plain-name DT_SONAME.
+vendor/lib64/libBST3DDNS_orlando.so;DISABLE_CHECKELF
+vendor/lib64/libBSTHDRDETECT_orlando.so;DISABLE_CHECKELF
+vendor/lib64/libBSTMultiExpoGainHDR_orlando.so;DISABLE_CHECKELF
 vendor/lib64/libSQLiteModule_VER_ALL.so
 vendor/lib64/libheichal.so
 vendor/lib64/libimagebuffer_wrapper.so
 vendor/lib64/libmtkisp_metadata.so
 vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libudf.so
-vendor/lib64/libundistort_impl.so
+vendor/lib64/libarcsoft_portrait_distortion_correction.so
+vendor/lib64/libmpbase.so
 vendor/lib64/libvidhance.so
 
+# Display (PQ)
+vendor/etc/cust_color_3.xml
+vendor/etc/cust_color_4.xml
+
 # eUICC
-product/app/EuiccPartnerApp/EuiccPartnerApp.apk;PRESIGNED
+product/priv-app/EuiccPartnerApp/EuiccPartnerApp.apk;PRESIGNED
+product/etc/permissions/privapp-permissions-com.oem.euiccpartnerapp.xml
+vendor/etc/permissions/android.hardware.telephony.euicc.mep.xml
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-goodixservice
@@ -497,6 +616,9 @@ vendor/firmware/haptic_nv_rtp_osc_24K_5s.bin
 vendor/firmware/haptic_nv_rtp_silk.bin
 vendor/firmware/ILITEK_FW_77600
 vendor/firmware/ILITEK_FW_7807
+vendor/firmware/ILITEK_FW_Orlando_77600
+vendor/firmware/focaltech-txd_ft8725-ft8725-vegas.ini
+vendor/firmware/focaltech_ts_fw_txd_ft8725.bin
 vendor/firmware/mot_aw86006.prog
 vendor/firmware/mot_aw86006vcmyova.prog
 vendor/firmware/novatek_ts_fw.bin
@@ -507,12 +629,16 @@ vendor/firmware/tiktap_wave.bin
 # Firmware (recovery)
 vendor/firmware/ILITEK_FW_77600:recovery/root/vendor/firmware/ILITEK_FW_77600
 vendor/firmware/ILITEK_FW_7807:recovery/root/vendor/firmware/ILITEK_FW_7807
+vendor/firmware/ILITEK_FW_Orlando_77600:recovery/root/vendor/firmware/ILITEK_FW_Orlando_77600
+vendor/firmware/focaltech-txd_ft8725-ft8725-vegas.ini:recovery/root/vendor/firmware/focaltech-txd_ft8725-ft8725-vegas.ini
+vendor/firmware/focaltech_ts_fw_txd_ft8725.bin:recovery/root/vendor/firmware/focaltech_ts_fw_txd_ft8725.bin
 vendor/firmware/novatek_ts_fw.bin:recovery/root/vendor/firmware/novatek_ts_fw.bin
 
 # Modem database (matches the modem firmware build)
-vendor/etc/apdb/APDB_MT6835___W2441
-vendor/etc/apdb/APDB_MT6835___W2441_ENUM
+vendor/etc/apdb/APDB_MT6835___W2538
+vendor/etc/apdb/APDB_MT6835___W2538_ENUM
 
 # NFC (NXP SN220)
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp_220e.conf
+vendor/etc/libnfc-nxp_220e_orlando.conf

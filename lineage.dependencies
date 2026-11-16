@@ -4,7 +4,7 @@
     "target_path": "device/motorola/mt6835-common"
   },
   {
-    "repository": "android_device_motorola_vegas-kernels",
-    "target_path": "device/motorola/vegas-kernels"
+    "repository": "android_device_motorola_vegas26-kernels",
+    "target_path": "device/motorola/vegas26-kernels"
   }
 ]

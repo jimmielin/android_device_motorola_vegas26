@@ -1,0 +1,21 @@
+## Additions to device/motorola/mt6835-common/proprietary-files.txt for vegas26.
+## They are extracted into vendor/motorola/mt6835-common-vegas26 together with
+## the shared list, because the W1WEOS36 builds of shared blobs depend on them.
+## All files are from moto g power - 2026 (vegas_og_sys-user 16 W1WEOS36.48-22-3-3-4-3 7806ed-c4dcce).
+
+# Audio: aurisys_config.xml loads the super-wideband speech enhancement chain
+vendor/lib64/libMtkSpeechEnh_swb.so
+vendor/lib64/libmtkspparser_swb.so
+
+# Radio: libmtk-ril and libmtkmipc-ril link against MediaTek's TensorFlow Lite.
+# AOSP's libtflite has a vendor variant installing to the same path, so the
+# stock build ships as libtflite_vendor.so and both libraries point at it.
+vendor/lib64/libtflite.so:vendor/lib64/libtflite_vendor.so
+
+# Radio: librilfusion links SIM/config AIDL version 2 next to version 1 of the
+# other radio interfaces. Soong rejects that mix for source-built AIDL
+# libraries, and the AOSP version 2 vendor variants would install to the same
+# paths, so the stock version 2 builds (which use radio-V1 types) ship under
+# _vendor names and librilfusion is pointed at them.
+vendor/lib64/android.hardware.radio.config-V2-ndk.so:vendor/lib64/android.hardware.radio.config-V2-ndk_vendor.so
+vendor/lib64/android.hardware.radio.sim-V2-ndk.so:vendor/lib64/android.hardware.radio.sim-V2-ndk_vendor.so

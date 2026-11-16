@@ -8,8 +8,9 @@ vendor.camera.vidhance.IHCon=0
 # Haptics
 ro.vendor.mot.awinic.tiktap=1
 
-# NFC: stock picks the SN220 configurations through these properties.
-persist.vendor.nfc.config_file_name=libnfc-nxp_220e.conf
+# NFC: stock's nxpnfcinfo picks the vegas26 ("orlando") SN220 RF tuning when
+# ro.boot.radio is NA2; set it directly instead of shipping nxpnfcinfo.
+persist.vendor.nfc.config_file_name=libnfc-nxp_220e_orlando.conf
 
 # Radio
 ro.vendor.radio.imei.sv=22
